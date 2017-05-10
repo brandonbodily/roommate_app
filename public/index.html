@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="RoommateAngular">
+<head>
+	<link rel="stylesheet" href="roommates.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body ng-controller="MainController">
+	<header>
+		<h1>Roommate Reference</h1>
+		<h3>Expense Orginization</h3>
+	</header>
+	<div class="roommates-div">
+
+		<div class="person-div" id="{{roommate.name}}" ng-repeat="roommate in roommates" ng-click="personClicked(roommate.name)">
+			<span >{{ roommate.name }}<br></span>
+			<span style="font-size: 16px;">Owes: ${{ roommate.owesHouse }}</span>
+			<img id ="roommateDeleteBin" src="bin.png" ng-click="deleteRoommate(roommate)" width="16" height="16">
+		</div>
+
+		<button ng-click="showForm = !showForm" ng-show="!showForm" id="addRoommate">Add Roommate</button>
+
+		<form id="showForm" ng-show="showForm" name="submitRoommate" ng-submit="submitRoommate.$valid && addRoommate()" novalidate>
+			<input type="text" id="name" placeholder="Name" ng-model="name" ng-required="true">
+			<button ng-click="isClicked = true">Submit</button><br>
+			<span ng-show="isClicked" style="color: red; font-size: 12px; float:left;">Name is required.</span>
+		</form>
+
+	</div>
+
+	<div id="whoOwesWhoDiv" ng-show="showWhoOwesWho">
+		<!--<span class="whoOwesWho" ng-repeat="person in whoOwesWhoList">{{ person }}</span>-->
+		<span ng-show="debtor">You owe <span ng-repeat="string in whoOwesWhoList">{{ string }} </span></span>
+		
+		<span ng-show="!debtor"> The following owe you <br><span ng-repeat="string in whoOwesWhoList">{{ string }} </span></span>
+		<br>
+		<br>
+
+	</div>
+
+	<button ng-click="recalculate()" ng-show="recalculateButton" >Recalculate </button>
+
+	<div id="houseNeeds">
+		<h2>House Needs</h2>
+		<div class="houseListItem" ng-repeat="item in listItems">
+		<span>{{item.name}}</span>
+		<img src="bin.png" alt="Garbage" width="24" height="24" style="float: right;" ng-click="deleteItem(item)" ng-show="!buyingMode">
+		<img src="cart.png" alt="Cart" width="24" height="24" style="float: right;" hspace="10" ng-click="buyItem(item,this)" ng-show="!buyingMode">
+
+		<button ng-show="buyingMode" class="buyButton" ng-click="itemBought(itemAmount, item)"><img class="cartImg" src="cart.png" alt="Buy" width="24" height="24" type="submit"></button>
+		<input class="itemAmount" type="number" ng-show="buyingMode" ng-model="itemAmount" placeholder="$$$" required>
+		</div>
+
+		<button ng-click="showAddItemForm = !showAddItemForm" ng-show="!showAddItemForm" id="addItem">+</button>
+
+		<div id="showAddItemForm" ng-show="showAddItemForm">
+			<input type="text" id="item" placeholder="Item" ng-model="item" >
+			<button  ng-click="addItem()">Submit</button>
+		</div>
+
+	</div>
+
+	<div id="snackbar">Select Roommate</div>
+
+
+	<!--<p font-size: 16px;><b>Ownership:</b> </p>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="controller.js"></script>
+	<script src="service.js"></script>
+</body>
+</html>

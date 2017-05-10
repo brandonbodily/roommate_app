@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="RoommateAngular">
+	<head>
+		<link rel="stylesheet" href="login.css" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	</head>
+	<body ng-controller="RegisterController">
+	<header>
+		<h1>Roommate Reference</h1>
+		<h3>Expense Orginization</h3>
+	</header>
+		<form class="login-page" name="registerForm" ng-submit="submitRegisterForm()" novalidate>
+		  <div class="form">
+			<div class="register-form">
+			  <input type="text" placeholder="Email" ng-model="newEmail"/>
+			  <input type="text" placeholder="House Name" ng-model="newHouseName" required/>
+			  <input type="password" placeholder="Password" ng-model="newPassword" required/>
+			  <button id="create">create</button>
+			  <span id="message" ng-show="noNewHouseName" style="color:red;">Enter House Name</span>
+			  <span id="message" ng-show="noNewPassword" style="color:red;">Enter Password</span>
+			  <span id="message" ng-show="invalidHouseName" style="color:red;">House Name Already Exists</span>
+			  <p class="message">Already registered? <a href="login.html">Sign In</a></p>
+			</div>
+		  </div>
+		</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="registercontroller.js"></script>
+	<script src="loginService.js"></script>
+	</body>
+</html>

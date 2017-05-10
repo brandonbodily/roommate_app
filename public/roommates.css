@@ -1,0 +1,242 @@
+body {
+	background-color: #5DBCD2;
+	font-family: 'Open Sans', sans-serif;
+   margin:0px;
+   text-align: center;
+}
+
+h1 {
+	text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+h3 {
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 0px;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 20%;
+  background-color: #2980B9;
+}
+
+input {
+	padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #FFF;
+  border-radius: 4px;
+  background-color: #319cb4;
+  font-size: 16px;
+}
+
+.roommates-div
+{
+  overflow: hidden;
+  text-align: center;
+  padding: 30px;
+}
+.person-div
+{
+  position: relative;
+  display: inline-block;
+  width: 100px; 
+  border: 2px solid #FFF;
+  padding: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: left;
+  border-radius: 5px;
+  background: #1d88a1;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+}
+
+#addRoommate {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#showForm {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#addItem {
+  margin-top:20px;
+}
+
+#showAddItemForm {
+  margin-top: 20px;
+}
+
+#item {
+  margin-bottom: 10px;
+  width: 220px; 
+}
+
+#whoOwesWhoDiv
+{
+  overflow: hidden;
+  text-align: center;
+  padding: 30px;
+
+}
+
+.whoOwesWho {
+  text-align: center;
+}
+
+span {
+  font-size: 20px;
+}
+
+#houseNeeds {
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  padding: 30px;
+  border: 2px solid #217C7E;
+  border-radius: 5px;
+  width: 260px;
+  background: #3498db;
+  margin-bottom: 40px;
+}
+
+.houseListItem {
+  display: inline-block;
+  width: 200px; 
+  border: 2px solid #FFF;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: left;
+  border-radius: 5px;
+  background: #1d88a1;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(bottom, #3498db, #2980b9);
+}
+
+.itemAmount {
+  width: 50px;
+  height: 32px;
+  float: right;
+  padding: 5px;
+}
+
+.buyButton {
+  padding: 0px 10px;
+  margin-left: 5px;
+  float: right;
+}
+
+#roommateDeleteBin {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+
+.cartImg {
+}
+
+button {
+  background: #1d88a1;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(bottom, #3498db, #2980b9);
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  text-align: center;
+
+}
+
+button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.person-div:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

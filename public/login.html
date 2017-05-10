@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="RoommateAngular">
+	<head>
+		<link rel="stylesheet" href="login.css" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	</head>
+	<body ng-controller="LoginController">
+	<header>
+		<h1>Roommate Reference</h1>
+		<h3>Expense Orginization</h3>
+	</header>
+		<form class="login-page" name="loginForm" ng-submit="submitLoginForm()" novalidate>
+		  <div class="form">
+			<div class="login-form">
+			  <input type="text" placeholder="House Name" ng-model="houseName" required/>
+			  <input type="password" placeholder="Password" ng-model="password" required/>
+			  <button id="login">login</button>
+			  <span id="message" ng-show="noHouseName" style="color:red;">Enter House Name</span>
+			  <span id="message" ng-show="noPassword" style="color:red;">Enter Password</span>
+			  <span id="message" ng-show="invalid" style="color:red;">Invalid House Name or Password</span>
+			  <p class="message">Not registered? <a href="register.html">Create an account</a></p>
+			</div>
+		  </div>
+		</form>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="logincontroller.js"></script>
+	<script src="loginService.js"></script>
+	</body>
+</html>
